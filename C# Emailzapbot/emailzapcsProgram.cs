@@ -1,3 +1,5 @@
+//dotnet publish --output {path} --runtime win10-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=false --self-contained
+
 using OL = Microsoft.Office.Interop.Outlook;
 using Microsoft.Toolkit.Uwp.Notifications;
 using System.Runtime.InteropServices;
