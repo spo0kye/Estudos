@@ -3,5 +3,5 @@
 # Except this file
 !.gitignore
 /C#\ Emailzapbot/
-/C#/bin/
-/C#/obj/
+C#/bin/
+C#/obj/
