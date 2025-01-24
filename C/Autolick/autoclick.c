@@ -21,19 +21,19 @@ HANDLE hThreadGetPos;
 int main(void)
 {
     hThreadClick = (HANDLE)_beginthread((void *)click, 0, NULL);
-    while (TRUE)
+    while(TRUE)
     {
         Sleep(100);
-        if ((GetAsyncKeyState('A') & 0x8000) > 0)
+        if((GetAsyncKeyState('A') & 0x8000) > 0)
         {
-            if (!keyPressed)
+            if(!keyPressed)
             {
                 state = !state;
                 keyPressed = TRUE;
             }
         }
 
-       else if ((GetAsyncKeyState('s') & 0x8000) > 0)
+       else if((GetAsyncKeyState('s') & 0x8000) > 0)
         {
             CloseHandle(hThreadClick);
             return;
@@ -47,11 +47,11 @@ int main(void)
 
 void click(void)
 {
-    while (TRUE)
+    while(TRUE)
     {
-        while (state)
+        while(state)
         {
-            // Can crash entire system when running on low-end PCs
+            // Can crash entire system when running without sleep
             Sleep(10);
             mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
         }
