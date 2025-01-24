@@ -1,4 +1,5 @@
 // Automatically clicks with mouse left button
+// Alternate on and of with Left Ctrl
 // Somehow slower compared to the C# version
 #include <stdio.h>
 #include <Windows.h>
