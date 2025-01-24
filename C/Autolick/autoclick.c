@@ -1,4 +1,4 @@
-// Somehow slow compared to the C# version
+// Somehow slower compared to the C# version
 #include <stdio.h>
 #include <Windows.h>
 #include <time.h>
