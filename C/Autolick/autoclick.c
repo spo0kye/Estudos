@@ -1,3 +1,4 @@
+// Automatically clicks with mouse left button
 // Somehow slower compared to the C# version
 #include <stdio.h>
 #include <Windows.h>
