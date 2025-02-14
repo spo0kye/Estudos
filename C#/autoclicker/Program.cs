@@ -76,9 +76,9 @@ class Program
 
     private static void SendInputVer()
     {
-        // 0 for the MOUSE_INPUT
         INPUT InputDown = new INPUT
         {
+            // 0 for the MOUSE_INPUT
             type = 0,
             MI = new MOUSEINPUT
             {
