@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<form action="/quote" method="post">
+    <div class="form-group">
+        <h1>Pesquisa</h1>
+        <input id="stock" autocomplete="ph" autofocus class="form-control" name="stock" placeholder="stock symbol" type="text">
+    </div>
+    {% if dict %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scopé="col">Company</th>
+                <th scopé="col">Symbol</th>
+                <th scopé="col">Price</th>
+            </tr>
+            <tr>
+                <td scopé="col">{{ dict.name }}</td>
+                <td scopé="col">{{ dict.symbol }}</td>
+                <td scopé="col">${{ '%0.2f' | format(dict.price|float) }}</td>
+
+            </tr>
+        </thead>
+    </table>
+    {% endif %}
+</form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <H1>Registros</H1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name &nbsp</th>
+                <th>Sport</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for registrant in registros %}
+                <tr>
+                    <td>{{ registrant.name }}</td>
+                    <td>{{ registrant.sport }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

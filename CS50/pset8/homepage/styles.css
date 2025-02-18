@@ -1,0 +1,32 @@
+.centered{
+text-align: center;
+}
+
+.medio{
+font-size: medium;
+}
+
+.bgconf{
+background-image: url("matrix.gif");
+background-color: #cccccc;
+}
+
+.container{
+  height: 200px;
+  position: relative;
+  border: 3px solid green;
+  display: grid;
+}
+
+select{
+    margin: auto;
+    position: relative;
+    top: 5%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+}
+
+.para{
+text-indent: 50px
+}

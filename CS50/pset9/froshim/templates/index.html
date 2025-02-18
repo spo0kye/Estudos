@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <H1>Register</H1>
+    <form action="/register" method="post">
+        <input name="name" placeholder="nome" autocomplete="lambimia">
+        <select name="sport">
+            <option value="" disabled selected>Selecione um esporte</option>
+            {% for sport in sports %}
+                <option value="{{ sport }}">{{ sport }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit">
+        <div id="error" style=color:Red>{% block error %} {% endblock %}</div>
+    </form>
+{% endblock %}

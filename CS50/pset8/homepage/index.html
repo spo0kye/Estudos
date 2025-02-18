@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang = "pt" >
+    <head>
+        <link href = "styles.css" rel = "stylesheet" >
+        <title> My page </title>
+    </head>
+        <h1 class="centered">Seja bem vindo ao guia de python!</h1>
+        <h4 class="centered">Caso você se confunda com alguma coisa: <a href="https://google.com">Google</a></h4>
+    <body class="bgconf">
+        <button id="parar">chega disso</button>
+        <script>
+            let body = document.querySelector('body');
+            document.querySelector('#parar').onclick = function() {
+                body.style.backgroundImage = 'url("fundo.jpg")';
+            };
+        </script>
+        <div class="container">
+            <select>
+            <option value="" disabled selected>Selecione a função desejada</option>
+            <option>print</option>
+            <option>range</option>
+            <option>for</option>
+            </select>
+        </div>
+        <script>
+            document.querySelector('select').addEventListener('change', function(event) {
+                    if(this.value === "print"){
+                        window.location.href = "print.html";
+                    }
+
+                    if(this.value === "range"){
+                        window.location.href = "range.html";
+                    }
+                    if(this.value === "for"){
+                        window.location.href = "for.html";
+                    }
+            })
+        </script>
+    </body>
+</html>

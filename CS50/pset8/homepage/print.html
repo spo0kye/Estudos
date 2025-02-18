@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang = "pt">
+    <head>
+        <link href = "styles.css" rel = "stylesheet">
+        <title>
+            Print
+        </title>
+    </head>
+
+    <body>
+        <h1 class="centered">Essa é a página explicando o uso do print em Python</h1>
+        <p>O print é uma função em python que é utilizado para retornar uma string ao terminal de uso, levando consigo entre parênteses uma string como argumento obrigatório, e outros argumentos opicionais, sendo eles:</p>
+        <ul>
+            <ls>sep = '', em que é definido entre aspas o caractere que separa 2 valores, naturalmente um caractere nulo (inserido apenas caso tenha mais de 2 valores como argumento) </ls>
+            <ls>end = '', em que é definido o caractere ao final da string. Diferente de "sep", é um caractere inserido naturalmente para indicar o final de uma linha, para o terminal pular para a próxima.</ls>
+            <ls>file =(nome do arquivo). Naturalmente o print mostra os valores no console, mas com esse comando, ele escreve os mesmos valores, porém em um arquivo</ls>
+            <ls>flush = (bool). Esse comando faz com que o python não espere o buffer para mostrar os valores. Para ter um exemplo melhor, execute o código abaixo sem o argumento "flush":</ls>
+        </ul>
+        <div>
+            <div>import time</div>
+            <div>&nbsp</div>
+            <div>for _ in range(5):</div>
+            <p>&nbsp&nbsp&nbsp&nbspprint('.', end='', flush = True)</p>
+            <p>&nbsp&nbsp&nbsp&nbsptime.sleep(0.5)</p>
+            <p>print(' Pronto!')</p>
+        </div>
+    </body>

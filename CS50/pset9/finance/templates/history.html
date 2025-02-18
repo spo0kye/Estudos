@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<table class="table">
+    <thead>
+        <tr>
+          <th scope="col">Stock</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Value</th>
+          <th scope="col">Total value</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for rows in history|reverse %}
+          <tr>
+            <td>{{ rows.stock }}</td>
+            <td>{{ rows.quantity }}</td>
+            <td>${{ rows.value }}</td>
+            <td>{{ rows.operation }}</td>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}

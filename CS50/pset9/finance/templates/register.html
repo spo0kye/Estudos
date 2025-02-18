@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+<form action="/register" method="post">
+    <div class="form-group">
+        <div id="error" style=color:Red></div>
+        <input autocomplete="pholder" autofocus class="form-control" name="username" placeholder="Username" type="text">
+    </div>
+    <div class="form-group">
+        <input id="confirm-password" class="form-control" name="password" placeholder="Password" type="password">
+    </div>
+    <div class="form-group">
+        <input id="password" class="form-control" name="confirm-password" placeholder="Confirm password" type="password">
+    </div>
+    <button id="button" class="btn btn-primary" type="submit" disabled="true">Register</button>
+</form>
+
+<script>
+    $('#password, #confirm_password').on('keypress', function () {
+        if ($('#password').val() == $('#confirm-password').val()) {
+          $('#error').html('Ok').css('color', 'green');
+        } else
+          $('#error').html('Passwords Not Matching').css('color', 'red');
+      });
+    $('#password, #confirm_password').on('keyup', function () {
+        if ($('#password').val() == $('#confirm-password').val())
+        {
+          $('#error').html('Ok').css('color', 'green');
+          $('#button').attr("disabled", false);
+        }
+
+        else
+        {
+          $('#error').html('Passwords Not Matching').css('color', 'red');
+          $('#button').attr("disabled", true);
+        }
+      });
+</script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Stock</th>
+                <th scope="col">Quantity</th>
+                <th scopé="col">Value</th>
+                <th scopé="col">Total value</th>
+            </tr>
+        </thead>
+        {% set ns = namespace(i = 0) %}
+        {% for rows in possession %}
+        <tr>
+          <td>{{ rows.stock }}</td>
+          <td>{{ rows.quantity }}</td>
+          <td>{{ rows.value }}</td>
+          <td>{{ total[ns.i] }}</td>
+        </tr>
+          {% set ns.i = ns.i + 1 %}
+      {% endfor %}
+      <div id="wallet">
+        Wallet: {{ money }}
+        &nbsp &nbspTotal: <span id="span"></span>
+      </div>
+    </table>
+
+
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script>
+
+  function sendRequest(){
+      $.post('/look', function(soma){
+      document.querySelector('#span').innerHTML = soma;
+      })
+    }
+
+    sendRequest();
+    setInterval(sendRequest, 10000)
+</script>
+{% endblock %}
