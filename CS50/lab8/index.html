@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+            // TODO: Add code to check answers to questions
+            function enviar() {
+                if(document.querySelector("#r2").value.toUpperCase() === "Java".toUpperCase()) {
+                    document.getElementById("pholder2").textContent = 'Correto!';
+                    document.getElementById("r2").style.backgroundColor = "#4CAF50";
+                    document.getElementById("r2").disabled = true;
+                }
+
+                else{
+                    document.getElementById("pholder2").textContent = 'Incorrect!';
+                    document.getElementById("r2").style.backgroundColor = "#f44336";
+                    document.getElementById("r2").disabled = true;
+                }
+            }
+            function listen() {
+                let resposta = false;
+                document.querySelector('#Guatemala').onclick = function() {
+                    if(!resposta){
+                        document.getElementById("pholder1").textContent = 'Incorrect! The answer is Vatican';
+                        document.getElementById("Guatemala").style.backgroundColor = "#f44336";
+                        resposta = true;
+                    }
+                }
+                document.querySelector('#Vatican').onclick = function() {
+                    if(!resposta){
+                        document.getElementById("pholder1").textContent = 'Correct!';
+                        document.getElementById("Vatican").style.backgroundColor = "#4CAF50";
+                        resposta = true;
+                    }
+                }
+                document.querySelector('#South Africa').onclick = function() {
+                    if(!resposta){
+                        document.getElementById("pholder1").textContent = 'Incorrect! the answer is Vatican';
+                        document.getElementById("South Africa").style.backgroundColor = "#f44336"
+                        resposta = true;
+                    }
+                }
+                document.querySelector('#Russia').onclick = function() {
+                    if(!resposta){
+                        document.getElementById("pholder1").textContent = 'Incorrect! the answer is Vatican';
+                        document.getElementById("Russia").style.backgroundColor = "#f44336"
+                        resposta = true;
+                        }
+            }
+            }
+            document.addEventListener('DOMContentLoaded', listen);
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                   <h3>wich country is not part of the United Nations?</h3>
+                    <div><button id="Russia">Russia</button>
+                    <button id="South Africa">South Africa</button>
+                    <button id="Guatemala">Guatemala</button>
+                    <button id="Vatican">Vatican</button>
+                <div id="pholder1"> </div>
+            </div>
+        </div>
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>What programming language where used to create the game Minecraft?</h3>
+                <form onsubmit = "enviar(); return false;">
+                    <input autocomplete="ph" id="r2" type="text">
+                    <input type="submit">
+                </form>
+                <div id="pholder2"></div>
+        </div>
+    </body>
+</html>
