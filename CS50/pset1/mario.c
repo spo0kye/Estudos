@@ -1,12 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
-
 #define max 8
 
-
 void repeat(char c, int vzs);
-
 
 int main(void)
 {
