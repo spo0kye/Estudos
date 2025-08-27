@@ -15,11 +15,11 @@ class Program
         public uint mouseData;
         public uint dwFlags;
         public uint time;
-        // It should be a pointer but i'm not using it so i just make it NULL.
+        // It should be a ULongPtr but i'm not using it so i just make it NULL.
         public UIntPtr dwExtraInfo;
     }
 
-    // I will not put definitions for the KEYBOARDINPUT and HARDWAREINPUT cuz i'm not using it.
+    // I will not put definitions for the KEYBOARDINPUT and HARDWAREINPUT because i'm not using it.
     [StructLayout(LayoutKind.Sequential)]
     public struct INPUT
     {
@@ -50,7 +50,7 @@ class Program
         while (true)
         {
             const int key = 162; //Left Ctrl key code
-            Thread.Sleep(50);    // Laggy without it
+            Thread.Sleep(50);    // Control clicks per second, laggy below 10
             if ((GetAsyncKeyState(key) & 0x8000) > 0)
             {
                 if (!pressed)
@@ -64,6 +64,7 @@ class Program
         }
     }
 
+    // MouseEventVersion, deprecated
     private static void MouseEventVer()
     {
         while (true)
@@ -74,6 +75,7 @@ class Program
             }
     }
 
+    // SendInputVersion, modern and more efficient
     private static void SendInputVer()
     {
         INPUT InputDown = new INPUT
@@ -99,3 +101,4 @@ class Program
         }
     }
 }
+
