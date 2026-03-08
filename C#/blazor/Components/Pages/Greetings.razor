@@ -1,0 +1,14 @@
+@page "/greetings"
+@rendermode InteractiveServer
+
+<PageTitle>Greetings</PageTitle>
+
+<input @bind="nome" @bind:event="oninput"/>
+<button @onclick="() => nome = string.Empty"></button>
+<p>Hello, @nome</p>
+
+
+@code
+{
+    string nome = "";
+}
