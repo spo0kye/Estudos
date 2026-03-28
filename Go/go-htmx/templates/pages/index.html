@@ -1,0 +1,20 @@
+{{define "content"}}
+    <h2>Index</h2>
+
+    <button
+        hx-post="/increment"
+        hx-target="#counter"
+        hx-swap="innerHTML">
+
+        Incrementar
+    </button>
+
+    <button
+        hx-get="/pizzas",
+        hx-target="pizzas"
+        hx-swap="innerHTML"
+        >
+        show pizzas
+    </button>
+    <div id="pizzas"></div>
+{{end}}

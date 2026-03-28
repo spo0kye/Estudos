@@ -1,0 +1,24 @@
+{{ define "layout" }}
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+</head>
+
+<body>
+    <h1>Menu</h1>
+    {{ template "pizzas" .}}
+    <form 
+    hx-post="/pizzas/add"
+    hx-target="#pizzas"
+    hx-swap="beforeend"
+    hx-on::after-request="this.reset()">
+        <input name="name">
+        <input name="price">
+
+        <button>Adicionar</button>
+    </form>
+</button>
+</body>
+</html>
+{{ end }}

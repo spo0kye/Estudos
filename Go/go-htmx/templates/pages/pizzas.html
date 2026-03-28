@@ -1,0 +1,7 @@
+{{ define "pizzas" }}
+    <ul id="pizzas">
+        {{ range . }}
+            {{ template "pizza" .}}
+        {{ end }}
+    </ul>
+{{ end }}
